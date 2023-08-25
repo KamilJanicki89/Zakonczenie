@@ -1,11 +1,21 @@
-.PierwszyKontener{
+@mixin mobile{
+  @media screen and (max-width: 480px){
+    @content
+
+
+  }
+}
+
+/* Główne style */
+.PierwszyKontener {
   background-color: #007BFF;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
-.ZewnetrzyKontener{
+
+.ZewnetrzyKontener {
   box-shadow: 1px 4px 8px rgba(0,0,0,0.1);
   border-radius: 10px;
   background-color: aliceblue;
@@ -16,48 +26,73 @@
   max-width: 500px;
   padding: 20px;
 }
-form{
-  margin:10px;
+
+form {
+  margin: 10px;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-input{
+
+input {
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 12px;
 }
-button{
+
+button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   background-color: #007BFF;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
 }
-.logo {
-  font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-.title {
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 20px;
 
+.logo, .title {
+  font-weight: bold;
+  margin-bottom: 20px;
 }
-.Header{
+
+.logo {
+  font-size: 24px;
+}
+
+.title {
+  font-size: 18px;
+}
+
+/* Nagłówek */
+.Header {
   background-color: cornflowerblue;
-  display:flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
-.slider{flex: 0.4 ;border-right: 1px solid black;
-  background-color: #007BFF;
 
+/* Slider */
+.slider {
+  flex: 0.4;
+  border-right: 1px solid black;
+  background-color: #007BFF;
 }
-.container{
-border-radius: 0.5%;
+
+.NavSlider {
+  align-items: center;
+  color: black;
+  display: flex;
+  height: 50px;
+  padding: 10px;
+  justify-content: space-between;
+  background-color: #007BFF;
+}
+
+/* Kontener i czat */
+.container {
+  border-radius: 0.5%;
   position: relative;
   display: flex;
   width: 70%;
@@ -67,80 +102,50 @@ border-radius: 0.5%;
   margin: 50px;
   border: 1px solid #cccccc;
 }
-.chat{
+
+.chat {
   flex: 1;
   background-color: aliceblue;
   background-size: cover;
   background-repeat: repeat;
 }
-.NavSlider{
-  align-items: center;
-  color: black;
-  display: flex;
-  height: 50px;
-  padding: 10px;
-  justify-content: space-between;
-  background-color: #007BFF;
-}
-.logo{
-  font-weight: bold;
-}
+
+/* User Chat */
 .user {
   display: flex;
-  gap:10px;
+  gap: 10px;
 }
-img{
-  background-color: transparent;
-  width: 50px;
-  height:50px;
-  border-radius: 50%;
-  object-fit: cover;
 
-}
-button{
-  background-color: green;
-  color:black;
-  font-size: 15px;
-  cursor:pointer;
-  border: none;
-}
-.magnifier{
-  border-bottom: 2px solid gray;
-  .magnifierForm{
-    padding: 15px;
-input{
-  background-color:white;
-  border: none;
-  color:black;
-  &::placeholder{
-    color: black;
-  }
-
-}
-  }
-}
-.userChatInfo{
-  span{font-size: 24px; font-weight: 500}
-  p{font-size:15px; color: lightcyan;}
-}
-.userChat{
+.userChat {
   padding: 15px;
   align-items: center;
   display: flex;
-  color:white;
-  gap:10px;
+  color: white;
+  gap: 10px;
   cursor: pointer;
-  &:hover{
+  &:hover {
     background-color: deepskyblue;
   }
 
-  img{
+  img {
     width: 55px;
     border-radius: 55px;
     height: 50%;
     object-fit: cover;
   }
 }
+
+.userChatInfo span {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.userChatInfo p {
+  font-size: 15px;
+  color: lightcyan;
+}
+
+/* Chat Info */
 .chatInfo {
   height: 55px;
   display: flex;
@@ -150,13 +155,129 @@ input{
   padding: 10px;
   color: lightslategray;
 }
-.chatIcons{
+
+.chatIcons {
   display: flex;
-  gap:15px;
-  img{
+  gap: 15px;
+
+  img {
     height: 35px;
-    cursor:pointer;
+    cursor: pointer;
   }
 }
 
+/* Messagers */
+.messagers {
+  background-color: lightcyan;
+  overflow: scroll;
+  padding: 20px;
+  height: calc(100% - 180px);
+}
 
+.messagers .messager {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+
+  .messagerInfo {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    color: black;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .messagerContent {
+      max-width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      p {
+        background-color: white;
+        padding: 10px 20px;
+      }
+
+      img {
+        width: 30%;
+      }
+    }
+  }
+
+  &.mp {
+    flex-direction: row-reverse;
+
+    p {
+      background-color: cadetblue;
+      color:white;
+      border-radius: 10px 1px 10px;
+
+    }
+  }
+}
+
+/* Send & Input */
+.send {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 20px;
+  cursor: pointer;
+
+  button {
+    border: none;
+    padding: 8px 10px;
+    background-color: aqua;
+  }
+}
+
+.inp {
+  height: 50px;
+  background-color: white;
+  padding: 12px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.magnifier {
+  border-bottom: 2px solid gray;
+}
+
+.magnifierForm {
+  padding: 15px;
+}
+
+.magnifierForm input {
+  background-color: white;
+  border: none;
+  color: black;
+}
+
+.magnifierForm input::placeholder {
+  color: black;
+}
+
+img {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userChatInfo {
+  span {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  p {
+    font-size: 15px;
+    color: lightcyan;
+  }
+}

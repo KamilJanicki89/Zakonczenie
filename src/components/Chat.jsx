@@ -3,6 +3,8 @@ import Kamera from "../image/Kamera.png";
 import Dodaj from "../image/Dodaj.png";
 import Więcej from "../image/Więcej.png";
 import Messagers from "./Messagers.jsx";
+import inp from  "./inp.jsx"
+import Inp from "./inp.jsx";
 const Chat = () => {
 
     return(
@@ -14,9 +16,14 @@ const Chat = () => {
                     <img src={Dodaj} alt="" />
                     <img src={Więcej} alt="" />
                 </div>
-                <Messagers />
             </div>
-        </div>
+            <div>
+
+            </div>
+                <Messagers />
+                 <Inp/>
+            </div>
+
 
     )
 }

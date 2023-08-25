@@ -5,7 +5,7 @@ import Header from "./Strony/Header.jsx";
 function App() {
 
   return (
-   <Header/>
+   <Register/>
   );
 }
 
